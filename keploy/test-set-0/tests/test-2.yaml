@@ -1,0 +1,48 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-2
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/orders
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Connection: keep-alive
+            Content-Length: "0"
+            Host: localhost:8080
+            Postman-Token: 304d178a-1154-46c2-8a6e-aa46f65f6ca9
+            User-Agent: PostmanRuntime/7.41.2
+        body: ""
+        timestamp: 2024-09-21T02:03:34.774332164+05:30
+    resp:
+        status_code: 201
+        header:
+            Content-Length: "41"
+            Content-Type: application/json
+            Date: Fri, 20 Sep 2024 20:33:34 GMT
+        body: |
+            {"message":"Order created successfully"}
+        status_message: Created
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-09-21T02:03:36.820235422+05:30
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1726864416
+curl: |
+    curl --request POST \
+      --url http://localhost:8080/orders \
+      --header 'Connection: keep-alive' \
+      --header 'User-Agent: PostmanRuntime/7.41.2' \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: 304d178a-1154-46c2-8a6e-aa46f65f6ca9' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
